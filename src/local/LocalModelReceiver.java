@@ -3,6 +3,8 @@ package local;
 import java.io.IOException;
 import java.rmi.AlreadyBoundException;
 import java.rmi.NotBoundException;
+
+import forum.framework.ForumModel;
 import forum.framework.IForumModel;
 import forum.framework.IForumView;
 
@@ -19,46 +21,39 @@ public final class LocalModelReceiver implements IForumModel, Runnable {
 	}
 
 	@Override
-	public void deregisterView(String arg0) throws NotBoundException,
+	public void deregisterView(String name) throws NotBoundException,
 			IOException {
-		// TODO Auto-generated method stub
-		
+		ForumModel.INSTANCE.deregisterView(name);
 	}
 
 	@Override
-	public void moveEast(String arg0) throws NotBoundException, IOException {
-		// TODO Auto-generated method stub
-		
+	public void moveEast(String name) throws NotBoundException, IOException {
+		ForumModel.INSTANCE.moveEast(name);
 	}
 
 	@Override
-	public void moveNorth(String arg0) throws NotBoundException, IOException {
-		// TODO Auto-generated method stub
-		
+	public void moveNorth(String name) throws NotBoundException, IOException {
+		ForumModel.INSTANCE.moveNorth(name);
 	}
 
 	@Override
-	public void moveSouth(String arg0) throws NotBoundException, IOException {
-		// TODO Auto-generated method stub
-		
+	public void moveSouth(String name) throws NotBoundException, IOException {
+		ForumModel.INSTANCE.moveSouth(name);
 	}
 
 	@Override
-	public void moveWest(String arg0) throws NotBoundException, IOException {
-		// TODO Auto-generated method stub
-		
+	public void moveWest(String name) throws NotBoundException, IOException {
+		ForumModel.INSTANCE.moveWest(name);
 	}
 
 	@Override
-	public void registerView(String arg0, IForumView arg1)
+	public void registerView(String name, IForumView view)
 			throws AlreadyBoundException, IOException {
-		// TODO Auto-generated method stub
-		
+		ForumModel.INSTANCE.registerView(name, view);
 	}
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		
 	}
 

@@ -10,41 +10,35 @@ import forum.framework.IForumView;
 public final class LocalModelForwarder implements IForumModel {
 
 	@Override
-	public void deregisterView(String arg0) throws NotBoundException,
+	public void deregisterView(String name) throws NotBoundException,
 			IOException {
-		// TODO Auto-generated method stub
-
+		LocalModelReceiver.getInstance().deregisterView(name);
 	}
 
 	@Override
-	public void moveEast(String arg0) throws NotBoundException, IOException {
-		// TODO Auto-generated method stub
-
+	public void moveEast(String name) throws NotBoundException, IOException {
+		LocalModelReceiver.getInstance().moveEast(name);
 	}
 
 	@Override
-	public void moveNorth(String arg0) throws NotBoundException, IOException {
-		// TODO Auto-generated method stub
-
+	public void moveNorth(String name) throws NotBoundException, IOException {
+		LocalModelReceiver.getInstance().moveNorth(name);
 	}
 
 	@Override
-	public void moveSouth(String arg0) throws NotBoundException, IOException {
-		// TODO Auto-generated method stub
-
+	public void moveSouth(String name) throws NotBoundException, IOException {
+		LocalModelReceiver.getInstance().moveSouth(name);
 	}
 
 	@Override
-	public void moveWest(String arg0) throws NotBoundException, IOException {
-		// TODO Auto-generated method stub
-
+	public void moveWest(String name) throws NotBoundException, IOException {
+		LocalModelReceiver.getInstance().moveWest(name);
 	}
 
 	@Override
-	public void registerView(String arg0, IForumView arg1)
+	public void registerView(String name, IForumView view)
 			throws AlreadyBoundException, IOException {
-		// TODO Auto-generated method stub
-
+		LocalModelReceiver.getInstance().registerView(name, view);
 	}
 
 }
