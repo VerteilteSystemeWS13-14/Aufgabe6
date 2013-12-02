@@ -12,7 +12,7 @@ public final class LocalForumSetup {
 		ForumServer server = new ForumServer(LocalModelReceiver.getInstance());
 		
 		try {
-			//server.run();
+			server.run();
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
@@ -21,8 +21,9 @@ public final class LocalForumSetup {
 		ForumClient client2;
 		
 		try {
-			client1 = new ForumClient(new LocalModelForwarder());
-			client2 = new ForumClient(new LocalModelForwarder());
+			LocalModelForwarder fw = new LocalModelForwarder();
+			client1 = new ForumClient(fw);
+			client2 = new ForumClient(fw);
 			
 			client1.register();
 			client2.register();

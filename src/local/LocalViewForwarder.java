@@ -2,7 +2,6 @@ package local;
 
 import java.io.IOException;
 import java.util.Map;
-
 import forum.framework.IForumView;
 import forum.framework.Position;
 

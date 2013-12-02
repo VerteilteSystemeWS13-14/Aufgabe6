@@ -3,7 +3,6 @@ package local;
 import java.io.IOException;
 import java.rmi.AlreadyBoundException;
 import java.rmi.NotBoundException;
-
 import forum.framework.ForumModel;
 import forum.framework.IForumModel;
 import forum.framework.IForumView;
@@ -49,7 +48,7 @@ public final class LocalModelReceiver implements IForumModel, Runnable {
 	@Override
 	public void registerView(String name, IForumView view)
 			throws AlreadyBoundException, IOException {
-		ForumModel.INSTANCE.registerView(name, view);
+		ForumModel.INSTANCE.registerView(name, new LocalViewForwarder());
 	}
 
 	@Override
